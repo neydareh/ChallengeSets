@@ -12,7 +12,8 @@ namespace ChallengeSets
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            return (vals.Length % 2 == 0) ? true : false;
+            //return (vals.Length % 2 == 0) ? true : false;
+            throw new NotImplementedException();
         }
 
         public bool IsNumberEven(int number)

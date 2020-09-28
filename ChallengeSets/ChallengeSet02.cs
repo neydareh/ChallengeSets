@@ -85,7 +85,15 @@ namespace ChallengeSets
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            long count = 0;
+            for (int i = 0; i < number; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }

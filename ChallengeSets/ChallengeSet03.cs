@@ -51,7 +51,15 @@ namespace ChallengeSets
         }
         public int[] GetOddsBelow100()
         {
-            throw new NotImplementedException();
+            var oddNumbers = new List<int>();
+            for (int i = 0; i < 100; i++)
+            {
+                if (i % 2 != 0)
+                {
+                    oddNumbers.Add(i);
+                }
+            }
+            return oddNumbers.ToArray();
         }
 
         public void ChangeAllElementsToUppercase(string[] words)

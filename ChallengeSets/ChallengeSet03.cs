@@ -42,7 +42,7 @@ namespace ChallengeSets
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            return ( divisor != 0 ) ? ( dividend / divisor ) : 0;
         }
 
         public int LastMinusFirst(int[] nums)

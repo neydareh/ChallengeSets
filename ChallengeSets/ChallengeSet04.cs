@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace ChallengeSets
 {
     public class ChallengeSet04
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
+            var even = numbers.Where(num => num % 2 == 0).ToList();
+            var odd = numbers.Where(num => num % 2 != 0).ToList();
+            return even.Sum() - odd.Sum();
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)

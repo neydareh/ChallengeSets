@@ -26,7 +26,13 @@ namespace ChallengeSets
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
         {
-            throw new NotImplementedException();
+            var list = new List<int>();
+            list.Add(number1);
+            list.Add(number2);
+            list.Add(number3);
+            list.Add(number4);
+
+            return list.Min();
         }
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)

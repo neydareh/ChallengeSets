@@ -63,7 +63,10 @@ namespace ChallengeSets
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null) return 0;
+            if (numbers.All(x => x % 2 != 0)) return 0;
+            if ((numbers.Length != 0)) return numbers.Where(x => x % 2 == 0).Average();
+            else return 0;
         }
 
         public int Factorial(int number)

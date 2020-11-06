@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengeSets
 {
@@ -27,17 +28,11 @@ namespace ChallengeSets
 
         public bool IsAscendingOrder(int[] numbers)
         {
-            // Check if number is in ascending order 
-            // (if i is less than i + 1, and i + 1 is less than i + 2, i + n -1 is less than i + n)
-            int measure = 0;
-            for (int i = 0; i < numbers.Length - 1; i++)
-            {
-                if (numbers[i] > numbers[i + 1])
-                {
-                    measure += 1;
-                }
-            }
-            if (measure > 0)
+            // Check for null values Edge Case
+            if (numbers == null) return false;
+            // Check for ascending order
+            var orderByAscending = numbers.OrderBy(x => x);
+            if (numbers.SequenceEqual(orderByAscending) && numbers.Length > 0)
             {
                 return true;
             }

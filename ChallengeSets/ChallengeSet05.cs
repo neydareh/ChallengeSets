@@ -92,7 +92,13 @@ namespace ChallengeSets
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            var newList = new List<double>();
+            if (elements == null)
+            {
+                return newList.ToArray();
+            }
+            newList = elements.Where(elements => elements % 4 == 0).ToList();
+            return newList.ToArray();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)

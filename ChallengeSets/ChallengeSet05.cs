@@ -102,8 +102,20 @@ namespace ChallengeSets
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
-        {
-            throw new NotImplementedException();
+        { 
+            var numbers = nums.ToList();
+            numbers.Sort();
+            int count = 0;
+            for (int i = 0; i < numbers.Count; i++)
+            {
+                int sum = 0;
+                for (int j = 1; j < numbers.Count; j++)
+                {
+                    sum = numbers[i] + numbers[j];
+                    if (sum == targetNumber) count += 1;
+                }
+            }
+            return (count != 0) ? true : false;
         }
     }
 }

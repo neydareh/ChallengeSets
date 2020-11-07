@@ -63,7 +63,31 @@ namespace ChallengeSets
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            //Variables
+            string output = "";
+
+            if(words == null) return "";
+
+            // Iterate through the words
+            // Concatenate all word in words to form a sentence
+            for (int i = 0; i < words.Length; i++)
+            {
+                if (words[i] == "" || words[i] == " " || words[i] == "  ")
+                {
+                    output += "";
+                }
+                else
+                {
+                    string temp = words[i].Trim();
+                    output = output + temp + " ";
+                    if (words[i] == words[words.Length - 1])
+                    {
+                        output = output.Trim();
+                        output += ".";
+                    }
+                }
+            }
+            return output.Trim();
         }
 
         public double[] GetEveryFourthElement(List<double> elements)

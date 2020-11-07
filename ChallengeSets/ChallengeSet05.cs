@@ -41,7 +41,24 @@ namespace ChallengeSets
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            throw new NotImplementedException();
+            // Variables
+            int sum = 0;
+            int nextNumber;
+
+            // Check to see if numbers is null
+            if (numbers == null) return 0;
+            // Check for even number
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                if(numbers[i] % 2 == 0)
+                {
+                    // record index of even number 
+                    // add one to the index of even number and add the number at that index the sum
+                    nextNumber = i + 1;
+                    sum = numbers[nextNumber] + sum;
+                }
+            }
+            return sum;
         }
 
         public string TurnWordsIntoSentence(string[] words)

@@ -103,19 +103,13 @@ namespace ChallengeSets
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         { 
-            var numbers = nums.ToList();
-            numbers.Sort();
-            int count = 0;
-            for (int i = 0; i < numbers.Count; i++)
+            HashSet<int> values = new HashSet<int>();
+            foreach (int number in nums)
             {
-                int sum = 0;
-                for (int j = 1; j < numbers.Count; j++)
-                {
-                    sum = numbers[i] + numbers[j];
-                    if (sum == targetNumber) count += 1;
-                }
+                if (values.Contains(targetNumber - number)) return true;
+                values.Add(number);
             }
-            return (count != 0) ? true : false;
+            return false;
         }
     }
 }
